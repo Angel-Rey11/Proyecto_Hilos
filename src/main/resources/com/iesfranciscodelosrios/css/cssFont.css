@@ -1,0 +1,14 @@
+.label {
+     -fx-text-fill: #BD0932;
+     -fx-font-family: Arial;
+}
+
+.text {
+	-fx-text-fill: white;
+     -fx-font-family: Arial;
+}
+
+.text2 {
+	-fx-text-fill: black;
+     -fx-font-family: Arial;
+}
