@@ -40,6 +40,8 @@ public class Race extends Thread {
 	 */
 	public void startThread() {
 		double runner1 = 0;
+		String millis="";
+		String seconds="";
 		
 		while(exit) {
 			try {
@@ -47,15 +49,15 @@ public class Race extends Thread {
 				runner1 = img.getLayoutX();
 				Random r = new Random();
 				int low = 10;
-				int high = 45;
+				int high = 30;
 				int result = r.nextInt(high-low) + low;
 				
 				if(runner1 < runner.getBarrera().getLayoutX() -50) {
 					img.setLayoutX(img.getLayoutX() + result);
 				} else {
 					runner.getTime().setVisible(true);
-					String seconds = runner.getSeconds().getText();
-					String millis = runner.getMillis().getText();
+					seconds = runner.getSeconds().getText();
+					millis = runner.getMillis().getText();
 					time = seconds.concat("."+millis);
 					runner.getTimes().add(time);
 					runner.getId().add(img.getId());
@@ -66,7 +68,9 @@ public class Race extends Thread {
 				e.printStackTrace();
 			}
 		}
-		
+		if(runner.getTimes().size() == 4) {
+			runner.stopCro();
+		} 
 	}
 	
 	/**

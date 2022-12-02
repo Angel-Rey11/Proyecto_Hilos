@@ -11,13 +11,28 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="700.0" style="-fx-background-color: b34700;" stylesheets="@../css/cssFont.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iesfranciscodelosrios.Proyecto_Hilos.PrincipalController">
    <children>
+      <Separator layoutY="177.0" prefHeight="12.0" prefWidth="700.0" />
+      <Pane fx:id="barrera" layoutX="628.0" layoutY="-2.0" prefHeight="379.0" prefWidth="72.0" style="-fx-background-color: black;">
+         <children>
+            <ImageView fitHeight="63.0" fitWidth="54.0" layoutX="9.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/racing-flag.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="63.0" fitWidth="54.0" layoutX="9.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/racing-flag.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="-9.0" layoutY="154.0" rotate="90.0" style="-fx-font-size: 30px;" styleClass="text" text="FINISH" textFill="#fffdfd" />
+         </children>
+      </Pane>
       <Separator layoutX="69.0" orientation="VERTICAL" prefHeight="87.0" prefWidth="6.0" />
       <Separator layoutX="69.0" layoutY="282.0" orientation="VERTICAL" prefHeight="96.0" prefWidth="6.0" />
       <Separator layoutX="69.0" layoutY="183.0" orientation="VERTICAL" prefHeight="102.0" prefWidth="6.0" />
       <Separator layoutX="69.0" layoutY="85.0" orientation="VERTICAL" prefHeight="96.0" prefWidth="6.0" />
       <Separator layoutY="276.0" prefHeight="12.0" prefWidth="700.0" />
       <Separator layoutY="82.0" prefHeight="12.0" prefWidth="700.0" />
-      <Separator layoutY="177.0" prefHeight="12.0" prefWidth="700.0" />
       <ImageView fitHeight="43.0" fitWidth="33.0" layoutX="350.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@../images/4.png" />
@@ -106,21 +121,6 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Pane fx:id="barrera" layoutX="628.0" layoutY="-2.0" prefHeight="379.0" prefWidth="72.0" style="-fx-background-color: black;">
-         <children>
-            <Label layoutX="-9.0" layoutY="154.0" rotate="90.0" style="-fx-font-size: 30px;" styleClass="text" text="FINISH" textFill="#fffdfd" />
-            <ImageView fitHeight="63.0" fitWidth="54.0" layoutX="9.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/racing-flag.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="63.0" fitWidth="54.0" layoutX="9.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/racing-flag.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
       <ImageView id="1" fx:id="runner1" fitHeight="72.0" fitWidth="63.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/runner.png" />
@@ -141,7 +141,7 @@
             <Image url="@../images/runner.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="tiempos" layoutX="99.0" layoutY="132.0" prefHeight="275.0" prefWidth="501.0" style="-fx-background-color: #C3BEBC; -fx-background-radius: 20px;" visible="false">
+      <AnchorPane fx:id="tiempos" layoutX="99.0" layoutY="100.0" prefHeight="321.0" prefWidth="501.0" style="-fx-background-color: #C3BEBC; -fx-background-radius: 20px;" visible="false">
          <children>
             <AnchorPane prefHeight="72.0" prefWidth="501.0" style="-fx-background-color: skyblue; -fx-background-radius: 20px;">
                <children>
@@ -208,6 +208,9 @@
                   <Image url="@../images/medal%20(1).png" />
                </image>
             </ImageView>
+            <Separator layoutY="274.0" prefHeight="0.0" prefWidth="501.0" style="-fx-background-color: black;" />
+            <Button layoutX="398.0" layoutY="282.0" mnemonicParsing="false" onAction="#closeTimes" style="-fx-background-color: skyblue; -fx-border-color: black; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-font-weight: bolder;" text="CERRAR" />
+            <Button layoutX="228.0" layoutY="282.0" mnemonicParsing="false" onAction="#restartRace" style="-fx-background-color: skyblue; -fx-border-color: black; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-font-weight: bolder;" text="REINICIAR CARRERA" />
          </children>
       </AnchorPane>
    </children>

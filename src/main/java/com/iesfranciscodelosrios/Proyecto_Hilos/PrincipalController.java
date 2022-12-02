@@ -69,30 +69,39 @@ public class PrincipalController implements Runnable,Initializable{
 	public ImageView getRunner1() {
 		return runner1;
 	}
+	
 	public void setRunner1(ImageView runner1) {
 		this.runner1 = runner1;
 	}
+	
 	public ImageView getRunner2() {
 		return runner2;
 	}
+	
 	public void setRunner2(ImageView runner2) {
 		this.runner2 = runner2;
 	}
+	
 	public ImageView getRunner3() {
 		return runner3;
 	}
+	
 	public void setRunner3(ImageView runner3) {
 		this.runner3 = runner3;
 	}
+	
 	public ImageView getRunner4() {
 		return runner4;
 	}
+	
 	public void setRunner4(ImageView runner4) {
 		this.runner4 = runner4;
 	}
+	
 	public Pane getBarrera() {
 		return barrera;
 	}
+	
 	public void setBarrera(Pane barrera) {
 		this.barrera = barrera;
 	}
@@ -100,30 +109,39 @@ public class PrincipalController implements Runnable,Initializable{
 	public Label getMillis() {
 		return millis;
 	}
+	
 	public void setMillis(Label millis) {
 		this.millis = millis;
 	}
+	
 	public Label getSeconds() {
 		return seconds;
 	}
+	
 	public void setSeconds(Label seconds) {
 		this.seconds = seconds;
 	}
+	
 	public Button getTime() {
 		return time;
 	}
+	
 	public void setTime(Button time) {
 		this.time = time;
 	}
+	
 	public ArrayList<String> getTimes() {
 		return times;
 	}
+	
 	public void setTimes(ArrayList<String> times) {
 		this.times = times;
 	}
+	
 	public ArrayList<String> getId() {
 		return id;
 	}
+	
 	public void setId(ArrayList<String> id) {
 		this.id = id;
 	}
@@ -147,6 +165,9 @@ public class PrincipalController implements Runnable,Initializable{
 		rerace.setDisable(false);
 	}
 	
+	/**
+	 * Metodo para empezar el cronometro
+	 */
 	private void startCro() {
 			started = true;
 			cro = new Chronometer();
@@ -154,13 +175,18 @@ public class PrincipalController implements Runnable,Initializable{
 			thread.start();
 	}
 	
+	/**
+	 * Metodo para parar el cronometro
+	 */
 	public void stopCro() {
 		this.started = false;
 	}
 	
-	public void viewTime() {
-		System.out.println(times);
-		System.out.println(id);
+	/**
+	 * Boton que muestra una tabla para ver los tiempos y el ganador de la carrera
+	 */
+	@FXML
+	private void viewTime() {
 		tiempos.setVisible(true);
 		linea1.setText(id.get(0));
 		linea2.setText(id.get(1));
@@ -170,6 +196,23 @@ public class PrincipalController implements Runnable,Initializable{
 		tiempo2.setText(times.get(1));
 		tiempo3.setText(times.get(2));
 		tiempo4.setText(times.get(3));
+	}
+	
+	/**
+	 * Boton para cerrar la pestaña de tiempos
+	 */
+	@FXML
+	private void closeTimes() {
+		tiempos.setVisible(false);
+	}
+	
+	/**
+	 * Boton para reiniciar la carrera
+	 */
+	@FXML
+	private void restartRace() {
+		tiempos.setVisible(false);
+		reRace();
 	}
 	
 	/**
@@ -240,6 +283,10 @@ public class PrincipalController implements Runnable,Initializable{
 		rerace.setDisable(true);
 		time.setVisible(false);
 	}
+	
+	/**
+	 * Metodo run para contar con un hilo el cronometro y setearlo en los label que queremos
+	 */
 	@Override
 	public void run() {
 		try {
