@@ -55,7 +55,6 @@ public class Race extends Thread {
 				if(runner1 < runner.getBarrera().getLayoutX() -50) {
 					img.setLayoutX(img.getLayoutX() + result);
 				} else {
-					runner.getTime().setVisible(true);
 					seconds = runner.getSeconds().getText();
 					millis = runner.getMillis().getText();
 					time = seconds.concat("."+millis);
@@ -69,7 +68,9 @@ public class Race extends Thread {
 			}
 		}
 		if(runner.getTimes().size() == 4) {
+			runner.getTime().setVisible(true);
 			runner.stopCro();
+			runner.getStart().setVisible(true);
 		} 
 	}
 	

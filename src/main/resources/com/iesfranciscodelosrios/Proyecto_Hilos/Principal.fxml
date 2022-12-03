@@ -71,7 +71,7 @@
                   <Image url="@../images/podium.png" />
                </image>
             </ImageView>
-            <Button layoutX="104.0" layoutY="20.0" mnemonicParsing="false" onAction="#startRace" prefHeight="33.0" prefWidth="117.0" style="-fx-background-radius: 20px; -fx-background-color: skyblue; -fx-font-weight: bolder; -fx-border-color: black; -fx-border-radius: 20px;" text="INICIAR">
+            <Button fx:id="start" layoutX="104.0" layoutY="20.0" mnemonicParsing="false" onAction="#startRace" prefHeight="33.0" prefWidth="117.0" style="-fx-background-radius: 20px; -fx-background-color: skyblue; -fx-font-weight: bolder; -fx-border-color: black; -fx-border-radius: 20px;" text="INICIAR">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -210,7 +210,6 @@
             </ImageView>
             <Separator layoutY="274.0" prefHeight="0.0" prefWidth="501.0" style="-fx-background-color: black;" />
             <Button layoutX="398.0" layoutY="282.0" mnemonicParsing="false" onAction="#closeTimes" style="-fx-background-color: skyblue; -fx-border-color: black; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-font-weight: bolder;" text="CERRAR" />
-            <Button layoutX="228.0" layoutY="282.0" mnemonicParsing="false" onAction="#restartRace" style="-fx-background-color: skyblue; -fx-border-color: black; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-font-weight: bolder;" text="REINICIAR CARRERA" />
          </children>
       </AnchorPane>
    </children>

@@ -56,6 +56,8 @@ public class PrincipalController implements Runnable,Initializable{
 	private Label tiempo4;
 	@FXML
 	private AnchorPane tiempos;
+	@FXML
+	private Button start;
 	private boolean started;
 	private Chronometer cro;
 	private Thread thread;
@@ -145,6 +147,15 @@ public class PrincipalController implements Runnable,Initializable{
 	public void setId(ArrayList<String> id) {
 		this.id = id;
 	}
+	
+	public Button getStart() {
+		return start;
+	}
+
+	public void setStart(Button start) {
+		this.start = start;
+	}
+
 	/**
 	 * Metodo para empezar la carrera donde creamos los hilos
 	 */
@@ -163,6 +174,8 @@ public class PrincipalController implements Runnable,Initializable{
 	
 		rerace.setVisible(true);
 		rerace.setDisable(false);
+		
+		start.setVisible(false);
 	}
 	
 	/**
@@ -207,15 +220,6 @@ public class PrincipalController implements Runnable,Initializable{
 	}
 	
 	/**
-	 * Boton para reiniciar la carrera
-	 */
-	@FXML
-	private void restartRace() {
-		tiempos.setVisible(false);
-		reRace();
-	}
-	
-	/**
 	 * Metodo para parar la carrera, se paran los hilos
 	 */
 	@FXML
@@ -240,7 +244,13 @@ public class PrincipalController implements Runnable,Initializable{
 		runner2.setLayoutX(0);
 		runner3.setLayoutX(0);
 		runner4.setLayoutX(0);
-		startRace();	
+		cro.setSecond(0);
+		cro.setMilisecond(0);
+		seconds.setText("00");
+		millis.setText("000");
+		times.removeAll(times);
+		id.removeAll(id);
+		time.setVisible(false);
 	}
 	
 	/**
